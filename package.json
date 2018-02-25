@@ -12,8 +12,9 @@
     "coverage": "jest --coverage",
     "coveralls": "npm run coverage && cat coverage/lcov.info | coveralls",
     "build": "rollup -c",
-    "precommit": "npm run lint && npm test && npm run build",
-    "prepublish": "npm run precommit"
+    "precommit": "npm run docs && git add README.md && npm run lint && npm test && npm run build",
+    "prepublish": "npm run precommit",
+    "docs": "documentation readme lib/not-pwned.js --section API -q"
   },
   "repository": {
     "type": "git",
@@ -37,6 +38,8 @@
     "babel-core": "^6.26.0",
     "babel-plugin-external-helpers": "^6.22.0",
     "babel-preset-env": "^1.6.1",
+    "coveralls": "^3.0.0",
+    "documentation": "^5.4.0",
     "husky": "^0.14.3",
     "jest": "^22.4.2",
     "nock": "^9.2.1",
@@ -47,6 +50,7 @@
     "rollup-plugin-filesize": "^1.5.0",
     "rollup-plugin-ignore": "^1.0.3",
     "rollup-plugin-node-resolve": "^3.0.3",
+    "rollup-plugin-uglify": "^3.0.0",
     "xo": "^0.20.3"
   },
   "dependencies": {
@@ -68,5 +72,10 @@
     },
     "space": true,
     "semicolon": false
-  }
+  },
+  "types": "./index.d.ts",
+  "files": [
+    "dist",
+    "index.d.ts"
+  ]
 }

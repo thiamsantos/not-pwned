@@ -3,6 +3,7 @@
   "version": "0.1.0",
   "description": "Check if your password has been pwned",
   "main": "dist/not-pwned.js",
+  "browser": "dist/not-pwned-browser.js",
   "scripts": {
     "prelint": "prettier --single-quote --no-semi --no-bracket-spacing --trailing-comma none --write \"lib/**/*.js\" --write rollup.config.js",
     "lint": "xo --fix",

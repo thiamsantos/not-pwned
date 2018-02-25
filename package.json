@@ -1,0 +1,71 @@
+{
+  "name": "not-pwned",
+  "version": "0.1.0",
+  "description": "Check if your password has been pwned",
+  "main": "dist/not-pwned.js",
+  "scripts": {
+    "prelint": "prettier --single-quote --no-semi --no-bracket-spacing --trailing-comma none --write \"lib/**/*.js\" --write rollup.config.js",
+    "lint": "xo --fix",
+    "test": "jest",
+    "test:watch": "jest --watch",
+    "coverage": "jest --coverage",
+    "coveralls": "npm run coverage && cat coverage/lcov.info | coveralls",
+    "build": "rollup -c",
+    "precommit": "npm run lint && npm test && npm run build",
+    "prepublish": "npm run precommit"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/thiamsantos/not-pwned.git"
+  },
+  "keywords": [
+    "password",
+    "pwned",
+    "check",
+    "leaked",
+    "checker",
+    "security"
+  ],
+  "author": "Thiago Santos",
+  "license": "Apache-2.0",
+  "bugs": {
+    "url": "https://github.com/thiamsantos/not-pwned/issues"
+  },
+  "homepage": "https://github.com/thiamsantos/not-pwned#readme",
+  "devDependencies": {
+    "babel-core": "^6.26.0",
+    "babel-plugin-external-helpers": "^6.22.0",
+    "babel-preset-env": "^1.6.1",
+    "husky": "^0.14.3",
+    "jest": "^22.4.2",
+    "nock": "^9.2.1",
+    "prettier": "^1.10.2",
+    "rollup": "^0.56.2",
+    "rollup-plugin-babel": "^3.0.3",
+    "rollup-plugin-commonjs": "^8.3.0",
+    "rollup-plugin-filesize": "^1.5.0",
+    "rollup-plugin-ignore": "^1.0.3",
+    "rollup-plugin-node-resolve": "^3.0.3",
+    "xo": "^0.20.3"
+  },
+  "dependencies": {
+    "isomorphic-fetch": "^2.2.1",
+    "simple-sha1": "^2.1.0"
+  },
+  "babel": {
+    "presets": [
+      "env"
+    ]
+  },
+  "xo": {
+    "envs": [
+      "browser",
+      "jest"
+    ],
+    "rules": {
+      "import/no-unassigned-import": 0
+    },
+    "space": true,
+    "semicolon": false
+  }
+}

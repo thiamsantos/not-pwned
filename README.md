@@ -1,3 +1,7 @@
+> **UNMAINTAINED** This Project Is No Longer Maintained
+
+-------------------------------------------------------
+
 # not-pwned
 
 [![npm (scoped)](https://img.shields.io/npm/v/not-pwned.svg)](https://www.npmjs.com/package/not-pwned)
